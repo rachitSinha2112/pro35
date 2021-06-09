@@ -11,10 +11,10 @@ function preload()
 }
 
 function setup() {
-	createCanvas(1000,500);
-  dog=createSprite(250,250);
+	createCanvas(700,500);
+  dog=createSprite(550,250);
   dog.addImage(saddog);
-  dog.scale=0.10
+  dog.scale=0.35;
  
 foodObj= new Food();
 
@@ -77,15 +77,15 @@ function WriteStock(x){
   
 function feedDog(){
 dog.addImage(happyimg);
-foodObj.updateFoodStock(foodObj.getFoodStock()-1)
+foodObj.updateFoodStock(foodObj.foodStock-1)
 database.ref('/').update({
  // food:foodObj.getFoodStock(),
   lastFed:hour()
 })
 } 
 function addFood(){
-  foodObj.updateFoodStock(foodObj.getFoodStock()+1)
-
+  foodObj.updateFoodStock(foodObj.foodStock+1)
 } 
+
 
 
